@@ -23,6 +23,7 @@ public class RunApp {
         }
 
         List<Map<String, String>> output = fileParser.parseFile();
+        System.out.println(output);
         output.forEach(record -> {
         for(Map.Entry<String, String> entry: record.entrySet()) {
             System.out.printf("(%s, %s) ", entry.getKey(), entry.getValue());
