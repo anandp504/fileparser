@@ -17,10 +17,15 @@ public class JSONFileParserTest {
 
                 FileParser jsonParser = new JSONFileParser("Jsontest.json");
 
-                List<Map<String, String>> outPut =jsonParser.parseFile();
+                List<Map<String, String>> actual =jsonParser.parseFile();
+
+                actual.forEach(data -> {
+                    assertEquals("1577836800000", data.get("date"));//.forEach((k,v) -> );
 
 
-        assertEquals(outPut, "[{date=1577836800000}]");
+                });
+
+
 
 
     }
