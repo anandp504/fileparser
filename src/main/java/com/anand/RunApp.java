@@ -10,7 +10,7 @@ import java.util.Map;
 public class RunApp {
 
     public static void main(String [] args) throws Exception {
-        String fileType = args[0];
+        String fileType = "json";
         FileParser fileParser = null;
 
         if(fileType.equalsIgnoreCase("json")) {
