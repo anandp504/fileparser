@@ -33,7 +33,7 @@ public class CSVFileParserTest {
     public void itReturnsEmptyArray() {
 
         FileParser csvParser = null;
-        csvParser = new JSONFileParser("test.json");
+        csvParser = new CSVFileParser("test.json");
 
         List<Map<String, String>> actual = csvParser.parseFile();
 
