@@ -39,4 +39,20 @@ public class JSONFileParserTest {
         assertTrue(actual.size() == 0);
 
     }
+
+    @Test
+    public void numberOfColumnsTest(){
+
+        FileParser jsonParser = null;
+        jsonParser = new JSONFileParser("Jsontest.json");
+
+
+        List<Map<String, String>> actual = jsonParser.parseFile();
+        //System.out.println(actual);
+
+        Map<String, String> data1 = actual.get(0);
+
+        assertTrue(data1.size()==21);
+
+    }
 }
