@@ -12,7 +12,7 @@ public class CSVFileParserTest {
     @Test
     public void CSVParseFileTest() {
         FileParser csvParser = null;
-        csvParser = new CSVFileParser("Csvtest.json");
+        csvParser = new CSVFileParser("Csvtest.csv");
 
 
         List<Map<String, String>> actual = csvParser.parseFile();
@@ -33,7 +33,7 @@ public class CSVFileParserTest {
     public void itReturnsEmptyArray() {
 
         FileParser csvParser = null;
-        csvParser = new CSVFileParser("test.json");
+        csvParser = new CSVFileParser("test.csv");
 
         List<Map<String, String>> actual = csvParser.parseFile();
 
