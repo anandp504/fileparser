@@ -10,7 +10,7 @@ import static org.junit.jupiter.api.Assertions.*;
 public class CSVFileParserTest {
 
     @Test
-    public void JSONParseFileTest() {
+    public void CSVParseFileTest() {
         FileParser csvParser = null;
         csvParser = new CSVFileParser("Csvtest.json");
 
