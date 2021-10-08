@@ -55,4 +55,14 @@ public class JSONFileParserTest {
         assertTrue(data1.size()==21);
 
     }
+    @Test
+    public void countsOfLinesParseTest(){
+
+        FileParser jsonParser = null;
+        jsonParser = new JSONFileParser("jsontest.json");
+
+        List<Map<String, String>> actual = jsonParser.parseFile();
+        assertTrue(actual.size() == 4);
+
+    }
 }

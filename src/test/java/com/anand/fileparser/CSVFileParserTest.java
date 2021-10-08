@@ -54,4 +54,14 @@ public class CSVFileParserTest {
         assertTrue(data1.size()==21);
     }
 
+    @Test
+    public void countsOfLinesParseTest(){
+
+        FileParser csvParser = null;
+        csvParser = new CSVFileParser("Csvtest.csv");
+
+        List<Map<String, String>> actual = csvParser.parseFile();
+        assertTrue(actual.size() == 2);
+
+    }
 }
