@@ -16,9 +16,10 @@ public class CSVFileParserTest {
 
 
         List<Map<String, String>> actual = csvParser.parseFile();
-        //System.out.println(actual);
+
 
         Map<String, String> data1 = actual.get(0);
+
         assertEquals("Agali", data1.get("block_name"));
         assertEquals("13.81073513", data1.get("block_lat"));
         assertEquals("Agali", data1.get("block_name"));
@@ -39,6 +40,18 @@ public class CSVFileParserTest {
 
         assertTrue(actual.size() == 0);
 
+    }
+
+    @Test
+    public void numberOfColumnsTest(){
+
+        FileParser csvParser = null;
+        csvParser = new CSVFileParser("Csvtest.csv");
+
+        List<Map<String, String>> actual = csvParser.parseFile();
+        Map<String, String> data1 = actual.get(0);
+
+        assertTrue(data1.size()==21);
     }
 
 }
