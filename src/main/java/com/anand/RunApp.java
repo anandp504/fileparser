@@ -14,7 +14,7 @@ public class RunApp {
         FileParser fileParser = null;
 
         if(fileType.equalsIgnoreCase("json")) {
-            fileParser = new JSONFileParser("test_data.json");
+            fileParser = new JSONFileParser(args[1]);
         } else if (fileType.equalsIgnoreCase("csv")) {
             fileParser = new CSVFileParser("test_data.csv");
         } else {
@@ -23,6 +23,7 @@ public class RunApp {
         }
 
         List<Map<String, String>> output = fileParser.parseFile();
+        System.out.println(output);
         output.forEach(record -> {
         for(Map.Entry<String, String> entry: record.entrySet()) {
             System.out.printf("(%s, %s) ", entry.getKey(), entry.getValue());
