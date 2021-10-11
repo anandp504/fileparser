@@ -10,11 +10,11 @@ import java.util.Map;
 public class RunApp {
 
     public static void main(String [] args) throws Exception {
-        String fileType = "json";
+        String fileType = args[0];
         FileParser fileParser = null;
 
         if(fileType.equalsIgnoreCase("json")) {
-            fileParser = new JSONFileParser("test_data.json");
+            fileParser = new JSONFileParser(args[1]);
         } else if (fileType.equalsIgnoreCase("csv")) {
             fileParser = new CSVFileParser("test_data.csv");
         } else {
