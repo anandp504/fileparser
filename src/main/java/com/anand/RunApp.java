@@ -10,16 +10,17 @@ import java.util.Map;
 public class RunApp {
 
     public static void main(String [] args) throws Exception {
-        String fileType = "json";
+        String fileType = "xml";
         FileParser fileParser = null;
 
+
         if(fileType.equalsIgnoreCase("json")) {
-            fileParser = new JSONFileParser("test_data.json");
+            fileParser = new JSONFileParser(args[1]);
         } else if (fileType.equalsIgnoreCase("csv")) {
-            fileParser = new CSVFileParser("test_data.csv");
+            fileParser = new CSVFileParser(args[1]);
         } else {
             System.out.printf("%s filetype is not supported", fileType);
-            throw new Exception();
+            throw new Exception("filetype is not supported");
         }
 
         List<Map<String, String>> output = fileParser.parseFile();
